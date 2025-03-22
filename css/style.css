@@ -4,7 +4,7 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #0d0d0d;
-    color: #fff;
+    color: #000; /* Black text */
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -26,6 +26,16 @@ body {
         #833AB4);
     background-size: 400% 400%;
     animation: gradientMove 12s infinite ease-in-out;
+    z-index: -2;
+}
+
+/* Doodle Background */
+#doodle-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
 }
 
@@ -34,14 +44,8 @@ body {
     0% {
         background-position: 0% 50%;
     }
-    25% {
-        background-position: 100% 50%;
-    }
     50% {
-        background-position: 100% 0%;
-    }
-    75% {
-        background-position: 0% 50%;
+        background-position: 100% 50%;
     }
     100% {
         background-position: 0% 50%;
@@ -61,6 +65,37 @@ body {
     transition: top 0.3s ease-in-out;
 }
 
+/* Logo and Nav Links - Same Gradient as Background */
+.logo, 
+.nav-links a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(45deg,
+        #833AB4,
+        #E1306C,
+        #FD1D1D,
+        #FCAF45,
+        #FFDC80,
+        #4F5BD5,
+        #833AB4);
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 12s infinite ease-in-out;
+}
+
+/* Navbar Hover Effect */
+.nav-links a:hover {
+    background: #e1306c;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 2px solid #fd1d1d;
+    border-radius: 0;
+}
+
+
 /* Container */
 .container {
     width: 90%;
@@ -72,9 +107,9 @@ body {
 
 /* Logo */
 .logo {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #fd1d1d;
+    color: #000; /* Black text */
     cursor: pointer;
 }
 
@@ -84,7 +119,7 @@ body {
     font-size: 1.8rem;
     background: none;
     border: none;
-    color: #fff;
+    color: #000; /* Black text */
     cursor: pointer;
 }
 
@@ -100,7 +135,8 @@ body {
 }
 
 .nav-links a {
-    color: #fff;
+    font-size: 1rem;
+    color: #000; /* Black text */
     text-decoration: none;
     font-weight: bold;
     padding: 10px 15px;
@@ -123,6 +159,79 @@ body {
     padding-top: 80px;
 }
 
+/* ... (existing CSS code) ... */
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+/* Hero Content */
+.hero-content {
+    margin-bottom: 50px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Terminal Box */
+.terminal {
+    width: 700px;
+    height: 300px; /* Set a fixed height */
+    margin: 0 0px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    border: 2px solid #333;
+}
+
+/* Terminal Body */
+.terminal-body {
+    padding: 0px;
+    height: 300px; /* Take full height of the terminal */
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    background-color: #0d0d0d;
+}
+
+/* Terminal Text Animation */
+.terminal-body p {
+    margin: 0;
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflowing text */
+    border-right: .15em solid #00ff00; /* Cursor effect */
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Cursor Animation */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #00ff00; }
+}
+
+/* ... (rest of code remains the same) ... */
 /* Sections */
 section {
     padding: 80px 10%;
@@ -130,7 +239,8 @@ section {
 }
 
 /* Project & Skill Containers */
-.project-container, .skill-container {
+.project-container,
+.skill-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
@@ -138,7 +248,8 @@ section {
 }
 
 /* Project & Skill Cards */
-.project-card, .skill-item {
+.project-card,
+.skill-item {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 20px;
@@ -146,8 +257,32 @@ section {
     transition: transform 0.3s ease;
 }
 
-.project-card:hover, .skill-item:hover {
-    transform: translateY(-5px);
+/* Project Titles and Skill Text */
+.project-card h3,
+.skill-item {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000; /* Black text */
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Button Style */
+.btn {
+    background-color: #fd1d1d;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e1306c;
 }
 
 /* Contact Form */
@@ -160,12 +295,14 @@ section {
 }
 
 /* Contact Form Inputs */
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
     padding: 12px;
     border: 1px solid #fd1d1d;
-    background-color: #1a1a1a;
-    color: #fff;
+    background-color: #f5f5f5;
+    color: #000;
     border-radius: 8px;
+    font-size: 1rem;
 }
 
 /* Footer */
@@ -173,6 +310,22 @@ footer {
     text-align: center;
     padding: 20px 0;
     background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 10px;
+}
+.social-links a {
+    margin: 0 10px;
+    font-size: 1.2rem;
+    color: #000; /* Black text */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: #e1306c;
 }
 
 /* Mobile Styles */
@@ -211,7 +364,170 @@ footer {
         padding: 60px 5%;
     }
 
-    .project-container, .skill-container {
+    .project-container,
+    .skill-container {
         grid-template-columns: 1fr;
     }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Project & Skill Cards */
+.project-card,
+.skill-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5); /* Black shadow added */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* On hover, slight lift and stronger shadow */
+.project-card:hover,
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Contact Form Inputs */
+.contact input,
+.contact textarea {
+    padding: 12px;
+    border: 1px solid #fd1d1d;
+    background-color: #f5f5f5;
+    color: #000;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5); /* Shadow on inputs */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Button with Shadow */
+.btn {
+    background-color: #fd1d1d;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5); /* Button shadow */
+    transition: background-color 0.3s, box-shadow 0.3s ease;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #e1306c;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+}
+
+/* Social Links Shadow */
+.social-links a {
+    margin: 0 10px;
+    font-size: 1.2rem;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s, box-shadow 0.3s ease;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 8px;
+    background-color: #fff;
+}
+
+/* Social link hover effect */
+.social-links a:hover {
+    color: #e1306c;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
+}
+/* Terminal Box */
+.terminal {
+    
+    width: 700px;
+    margin: 10px 10px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    border: 2px solid #333;
+}
+
+/* Terminal Header */
+.terminal-header {
+    background-color: #333;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid #444;
+}
+
+/* Terminal Buttons */
+.terminal-header .btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Button Colors */
+.btn.red {
+    background-color: #ff5f56;
+}
+.btn.yellow {
+    background-color: #ffbd2e;
+}
+.btn.green {
+    background-color: #27c93f;
+}
+
+/* Terminal Title */
+.terminal-title {
+    color: #ddd;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+}
+
+/* Terminal Body */
+.terminal-body {
+    padding: 5px;
+    width: 650px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    background-color: #0d0d0d;
+}
+
+/* Terminal Text Animation */
+.terminal-body p {
+    margin: 0;
+    line-height: 1.5;
+    animation: typing 1s steps(20, end);
+}
+
+/* Input Line Style */
+.terminal-body .input {
+    color: #ffdc80;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Scrollbar Customization */
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+    background: #4f5bd5;
+    border-radius: 8px;
 }
