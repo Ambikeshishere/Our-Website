@@ -182,20 +182,24 @@ body {
 /* Terminal Box */
 .terminal {
     padding-bottom: 300px;
-    max-width: 700px;
-    height: auto; /* Set a fixed height */
-    margin: 10px 10px;
+    width: auto;
+    max-width: 80vw;
+    height: 700px; /* Set a fixed height */
+    
+    margin: 0;
+    padding-bottom: 300px;
     background-color: #1a1a1a;
     border-radius: 12px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
     overflow: hidden;
     border: 2px solid #333;
+    margin-top: 10px;
 }
 
 /* Terminal Body */
 .terminal-body {
     padding: 0px;
-    height: 300px; /* Take full height of the terminal */
+    height: auto; 
     
     font-family: 'Courier New', monospace;
     color: #00ff00;
