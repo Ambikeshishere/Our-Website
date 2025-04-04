@@ -1,14 +1,14 @@
 // Typewriter Effect
 const words = [
-    "AI Engineer",
-    "Innovator",
-    "Tech Enthusiast",
-    "Web Developer",
-    "Machine Learning Engineer",
-    "Data Scientist",
-    "Software Developer",
-    "Problem Solver",
-    "AI Researcher",
+    "an AI Engineer",
+    "an Innovator",
+    "a Tech Enthusiast",
+    "a Web Developer",
+    "a Machine Learning Engineer",
+    "a Data Scientist",
+    "a Software Developer",
+    "a Problem Solver",
+    "an AI Researcher",
     "Ambikesh Srivastava",
 ];
 let i = 0,
