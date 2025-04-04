@@ -301,28 +301,7 @@ section {
     font-size: 1rem;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background: rgba(0, 0, 0, 0.85);
-    color: #fff;
-}
 
-/* Social Links */
-.social-links {
-    margin-top: 10px;
-}
-.social-links a {
-    margin: 0 10px;
-    font-size: 1.2rem;
-    color: #000; /* Black text */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-.social-links a:hover {
-    color: #e1306c;
-}
 
 /* Mobile Styles */
 @media (max-width: 768px) {
@@ -527,3 +506,96 @@ footer {
     background: #4f5bd5;
     border-radius: 8px;
 }
+
+.footer {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 20px 15px;
+    text-align: center;
+    color: #ccc;
+    margin-top: 60px;
+    font-size: 0.95rem;
+  }
+  
+  .footer-text {
+    margin-bottom: 10px;
+  }
+  
+  .footer-name {
+    font-weight: 600;
+    background: linear-gradient(45deg, #833AB4, #E1306C, #FD1D1D);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 12s ease infinite;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-links a {
+    color: #fff;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.25s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    line-height: 0; /* fixes oversized font-icons like Instagram */
+  }
+
+  .social-links a svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  
+  .social-links a:hover {
+    transform: scale(1.1);
+    background: #fd1d1d;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(253, 29, 29, 0.4);
+  }
+  
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    text-align: center;
+}
+
+.skill-item img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.skill-item p {
+    font-size: 14px;
+    margin: 0;
+}
+
+  
