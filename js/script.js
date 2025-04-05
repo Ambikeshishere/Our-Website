@@ -102,6 +102,8 @@ const terminalLines = [
 
 let lineIndex = 0;
 
+// Function to add terminal lines with a delay
+
 function addTerminalLine() {
     if (lineIndex < terminalLines.length) {
         const p = document.createElement("p");
